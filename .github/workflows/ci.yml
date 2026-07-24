@@ -10,8 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4        # cài pnpm lên máy ảo (phải TRƯỚC setup-node)
+        with:
+          version: 9                       # đổi cho khớp `pnpm -v` của bạn nếu cần
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: npm test
+          cache: 'pnpm'                     # cache theo pnpm cho nhanh
+      - run: pnpm install --frozen-lockfile # tương đương npm ci, cần pnpm-lock.yaml
+      - run: pnpm test
