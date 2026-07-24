@@ -1,0 +1,16 @@
+{
+  "name": "module1-testing-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Phong lab Module 1 - Testing dung cach. Ban dong vai nguoi kiem chung code do agent viet.",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.9",
+    "@vitest/coverage-v8": "^2.1.9"
+  }
+}
