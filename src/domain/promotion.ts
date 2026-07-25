@@ -46,8 +46,8 @@ export function applyPromotion(order: Order, promo: Promotion): PromotionResult 
       discount = promo.value;
     }
 
-    // const total = Math.max(0, order.subtotal - discount);
-    const total = order.subtotal - discount;
+    const total = Math.max(0, order.subtotal - discount);
+    // const total = order.subtotal - discount;
     return { eligible: true, discount, total };
   }
 
